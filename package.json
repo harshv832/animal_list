@@ -1,6 +1,5 @@
 {
   "name": "roboto",
-  "homepage" : "https://harshv832.github.io/animal_list",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +7,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "babel-preset-react": "^6.24.1",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -19,8 +19,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-    "predeploy" : "npm run build"
-    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
