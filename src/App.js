@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// import React, { Component } from 'react';
+import data from './Data.js';
+import Details from './Details';
+import Search from './Search';
+import './App.css'
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+	
+			
+	const [anim,setdata] = useState([...data]);
+	const [searchfield, setsearch] = useState('');
+
+	
+	
+	onchange=(event)=>{
+		setsearch(event.target.value);
+		
+		// console.log(filterr);
+	}
+
+		const filterr = anim.filter(data =>{
+			return data.name.toLowerCase().includes(searchfield.toLowerCase())}
+				);
+		
+		return(
+			<div className='tc '>
+				<h1 className='f1'>THE JUNGLE BOOK</h1>
+				<Search change={onchange}/>
+				
+				<Details data={filterr}/>
+				
+			</div>
+
+
+		);  
+	}
+
+
 
 export default App;
